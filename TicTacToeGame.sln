@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormUI", "WinFormUI\WinFormUI.csproj", "{670716D9-74D3-4534-9634-D523A93E9ED7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeLibrary", "TicTacToeLibrary\TicTacToeLibrary.csproj", "{517644F1-72E3-479C-AD95-FD5CA8723553}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{670716D9-74D3-4534-9634-D523A93E9ED7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{670716D9-74D3-4534-9634-D523A93E9ED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{670716D9-74D3-4534-9634-D523A93E9ED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{670716D9-74D3-4534-9634-D523A93E9ED7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{517644F1-72E3-479C-AD95-FD5CA8723553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{517644F1-72E3-479C-AD95-FD5CA8723553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{517644F1-72E3-479C-AD95-FD5CA8723553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{517644F1-72E3-479C-AD95-FD5CA8723553}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C767333E-5160-4861-943B-731392F58AB2}
+	EndGlobalSection
+EndGlobal
