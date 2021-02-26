@@ -39,6 +39,7 @@ namespace WinFormUI
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.startGameButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -149,11 +150,24 @@ namespace WinFormUI
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // startGameButton
+            // 
+            this.startGameButton.Enabled = false;
+            this.startGameButton.Location = new System.Drawing.Point(249, 4);
+            this.startGameButton.Name = "startGameButton";
+            this.startGameButton.Size = new System.Drawing.Size(75, 23);
+            this.startGameButton.TabIndex = 10;
+            this.startGameButton.Text = "Play";
+            this.startGameButton.UseVisualStyleBackColor = true;
+            this.startGameButton.Visible = false;
+            this.startGameButton.Click += new System.EventHandler(this.startGameButton_Click);
+            // 
             // TicTacToeMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(336, 355);
+            this.Controls.Add(this.startGameButton);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
@@ -187,6 +201,7 @@ namespace WinFormUI
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button startGameButton;
     }
 }
 

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TicTacToeLibrary.ViewModels;
@@ -38,7 +39,7 @@ namespace WinFormUI
             }
             if (HasWon == true)
             {
-                gameNotificationLabel.Text = "Winner!";
+                PlayerWon();
             }
             //Change the symbol to the corresponding players symbol
             //Check if player has won
@@ -56,7 +57,7 @@ namespace WinFormUI
             }
             if(HasWon == true)
             {
-                gameNotificationLabel.Text = "Winner!";
+                PlayerWon();
             }
         }
 
@@ -70,7 +71,7 @@ namespace WinFormUI
             }
             if (HasWon == true)
             {
-                gameNotificationLabel.Text = "Winner!";
+                PlayerWon();
             }
         }
 
@@ -84,7 +85,7 @@ namespace WinFormUI
             }
             if (HasWon == true)
             {
-                gameNotificationLabel.Text = "Winner!";
+                PlayerWon();
             }
         }
 
@@ -98,7 +99,7 @@ namespace WinFormUI
             }
             if (HasWon == true)
             {
-                gameNotificationLabel.Text = "Winner!";
+                PlayerWon();
             }
         }
 
@@ -112,7 +113,7 @@ namespace WinFormUI
             }
             if (HasWon == true)
             {
-                gameNotificationLabel.Text = "Winner!";
+                PlayerWon();
             }
         }
 
@@ -126,7 +127,7 @@ namespace WinFormUI
             }
             if (HasWon == true)
             {
-                gameNotificationLabel.Text = "Winner!";
+                PlayerWon();
             }
         }
 
@@ -140,7 +141,7 @@ namespace WinFormUI
             }
             if (HasWon == true)
             {
-                gameNotificationLabel.Text = "Winner!";
+                PlayerWon();
             }
         }
 
@@ -154,15 +155,16 @@ namespace WinFormUI
             }
             if (HasWon == true)
             {
-                gameNotificationLabel.Text = "Winner!";
+                PlayerWon();
             }
         }
 
         private void SetSymbol()
         {
-                //Get the current symbol from gamesession and set the button clicked to that symbol
-                clickedButton.Text = CurrentGameSession.CurrentSymbol;
-                CurrentGameSession.ChangePlayer();
+            //Get the current symbol from gamesession and set the button clicked to that symbol
+            clickedButton.Text = CurrentGameSession.CurrentSymbol;
+            CurrentGameSession.ChangePlayer();
+            UpdateGameNotificationLabel();
         }
 
         private void ClearGameTiles()
@@ -180,9 +182,9 @@ namespace WinFormUI
             gameNotificationLabel.Text = "";
         }
 
-        private void UpdateGameNotificationLabel()
+        private void UpdateGameNotificationLabel() 
         {
-
+            gameNotificationLabel.Text = $"Player {CurrentGameSession.CurrentSymbol}'s turn";
         }
 
         private void CheckIfPlayerHasWon()
@@ -258,5 +260,25 @@ namespace WinFormUI
 
         }
 
+        private void PlayerWon()
+        {
+            gameNotificationLabel.Text = $"Player {CurrentGameSession.NextPlayer.GameSymbol} is the Winner!";
+            HasWon = false;
+            ShowStartGameButton();
+        }
+
+        private void ShowStartGameButton()
+        {
+            startGameButton.Enabled = true;
+            startGameButton.Visible = true;
+        }
+
+        private void startGameButton_Click(object sender, EventArgs e)
+        {
+            ClearGameTiles();
+            HasWon = true;
+            startGameButton.Enabled = false;
+            startGameButton.Visible = false;
+        }
     }
 }
